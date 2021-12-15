@@ -51,7 +51,7 @@ const Dashboard = () => {
             "id": 2,
             "preferredId": "Eng456",
             "providerType": "INDIVIDUAL",
-            "category": "technical",
+            "category": "creative",
             "engagementType": "SHORTTERM",
             "title": "Construction",
             "description": "I need a mason for constructing Rain Water Harvesting Tank",
@@ -177,16 +177,20 @@ const Dashboard = () => {
 
     // }, []);
     return (
-        <div>
+        <div className="main">
             <NavBar />
+
+            
 
             <Routes>
 
-                <Route path='/engagements' element={<PrepareEngagementList engagamentList={list} header={"Explore Engagements"}/>} />
+                <Route path='/engagements' element={<PrepareEngagementList className="engagement" engagamentList={list} header={"Explore Engagements"}/>} />
 
                 {/* <Route path='/' element={<PrepareEngagementList engagamentList={engagements} header={"Explore Engagements"} />} /> */}
 
             </Routes>
+
+        
 
             
         </div>

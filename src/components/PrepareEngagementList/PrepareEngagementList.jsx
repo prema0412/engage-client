@@ -23,13 +23,13 @@ const PrepareEngagementList = (props) => {
 
         const columns = headers.map( (eachCategory, index) => (
 
-            <section className="engagement">
-                <h3>{eachCategory}</h3>
+            <section >
+                <h3 className="engagemenr__category">{eachCategory}</h3>
                 { (eachCategory) && engagements[index].map ( (engagement, index1) => {
 
                     return (
 
-                        <Engagement key={engagement.id+index1} index={index1} engagement={engagement} header={header} />
+                        <Engagement className="engagement" key={engagement.id+index1} index={index1} engagement={engagement} header={header} />
                     )
 
                      } ) }
@@ -42,7 +42,7 @@ const PrepareEngagementList = (props) => {
 
 
     return (
-     <section>  
+     <section className="engagement__detail">  
 
          {renderEngagements(filteredCategoryEngagements,categoryHeaders)}
 

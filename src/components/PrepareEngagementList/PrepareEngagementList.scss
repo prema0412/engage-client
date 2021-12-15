@@ -1,8 +1,14 @@
 @use '../../assets/sass/variables.scss' as *;
 
 .engagement__detail{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    // The below two properties might have to be adjusted
-    grid-gap: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 70%;
+    height: auto;
+    top: 10%;
+    
 }
+

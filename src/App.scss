@@ -1,9 +1,22 @@
-.App {
-  display:flex;
-  flex-direction: column;
-  width: 100vh;
-  height: 20vh;
-  align-items: center;
-  justify-content: center;
-  background-color: #fafafa;
+@use "../src/assets/sass/variables.scss" as *;
+
+body{
+  background: $color-background;
 }
+
+.main{
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  
+}
+
+
+// .App {
+//   display:flex;
+//   flex-direction: column;
+//   width: 100vh;
+//   height: 20vh;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: #fafafa;
+// }
