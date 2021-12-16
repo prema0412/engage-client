@@ -2,16 +2,28 @@
 
 .engagement{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom:50px; 
     padding: 20px;
-    border: 1px solid $font-color-white;
+   // border: 1px solid $font-color-white;
     
-    border-radius: 5px;
+    // border-radius: 5px;
+    // font-family: $font-poppins;
+    // font-style: normal;
+    // background: $color-background;
+    // box-shadow: 0px 20px 40px rgba(42, 48, 56, 0.08);
+    // width: 300px;
+    // height: 250px;
+    // border-radius: 5%;
+    
+
+    text-align: justify;
     font-family: $font-poppins;
-    font-style: normal;
-    background: $color-background;
-    box-shadow: 0px 20px 40px rgba(42, 48, 56, 0.08);
-    width: 300px;
-    height: 250px;
+    font-size: $font-mid;
+    border: 10px solid $font-color-grey;
+    padding: 2rem 1rem;
+    min-height: 3em;
+    width: 40%;
+   // resize: both;
+    background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
 }

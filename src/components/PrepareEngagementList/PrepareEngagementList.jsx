@@ -21,9 +21,11 @@ const PrepareEngagementList = (props) => {
 
     const renderEngagements = (engagements, headers) => {
 
+    
+
         const columns = headers.map( (eachCategory, index) => (
 
-            <section >
+            <section>
                 <h3 className="engagemenr__category">{eachCategory}</h3>
                 { (eachCategory) && engagements[index].map ( (engagement, index1) => {
 
@@ -36,6 +38,7 @@ const PrepareEngagementList = (props) => {
 
             </section>
         ));
+      
         console.log(columns);
         return columns;
  }

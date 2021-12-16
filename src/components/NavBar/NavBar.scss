@@ -9,14 +9,15 @@
         align-items: left;
         width: 300px;
         height: auto;
-        margin-top: 100px;
-        background-color: $color-background;
+      //  margin-top: 100px;
+        background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
         color: $color-text;
         font-size: $font-mid;
         line-height: $line-height-reg;
         font-weight: $font-weight-bold;
         font-family: $font-poppins;
         text-decoration: none;
+        border: 10px solid $font-color-grey;
 
         &__link {
 

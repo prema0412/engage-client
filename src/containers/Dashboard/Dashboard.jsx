@@ -3,6 +3,7 @@ import {  Routes, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import PrepareEngagementList from '../../components/PrepareEngagementList/PrepareEngagementList';
+import NewEngagement from '../../components/NewEngagement/NewEngagement';
 
 const Dashboard = () => {
 
@@ -185,6 +186,7 @@ const Dashboard = () => {
             <Routes>
 
                 <Route path='/engagements' element={<PrepareEngagementList className="engagement" engagamentList={list} header={"Explore Engagements"}/>} />
+                <Route path='/post' element={<NewEngagement className="newEngagement"  header={"Post an Engagement"}/>} />
 
                 {/* <Route path='/' element={<PrepareEngagementList engagamentList={engagements} header={"Explore Engagements"} />} /> */}
 
