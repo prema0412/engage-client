@@ -1,18 +1,70 @@
+@use '../../assets/sass/variables.scss' as *;
 
 .engagament-form{
+
+    display: block;
+   // flex-direction: column;
+ //   justify-content: flex-start;
+    margin-top: 100px;
+    margin-left: 100px;
+
+    width: 700px;
+    height: 650px;
+
+    border-width: 4px 4px 6px 6px;
+        border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+        //transform: rotate(-2deg);
+        border: 10px solid $font-color-grey; 
+        align-items: center;
+
+        &__title{
+            margin-left: 200px;
+        }
+
+
+    @media (max-width: 768px) {
+
+
+        &__elements{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            width: 100px;
+           // margin-right: 10px;
+            border-radius: 5%;
+            left: 10%;
+            margin-top: 10px;
+            left: calc(20%);
+        }
+
+        
+    }
+
+    @media (min-width: 769px) {
+
+    
     
    
-    &__element{
+    &__elements{
         display: grid;
-         grid-template-rows: 2fr;
-         grid-gap: 30px;
-         width: 300px;
-        
-      
-        &--category {
-            width: 500px;
-        }
+         grid-template-columns: 1fr;
+         grid-gap: 20px;
+         width: 350px;
+         border-radius: 2px;
+    }  
+
+    &__elements--category{
+             width: 500px;
+         }
+         
+  
        
     }
-  
+
+    &__input {
+        border-radius: 5px;
+    }     
+    
+   
 }
+  

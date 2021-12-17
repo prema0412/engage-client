@@ -22,6 +22,7 @@ const Engagement = (props) => {
 
     return (
         <div className="engagement">
+            <h3>{engagement.category}</h3>
             <p>{engagement.title}</p>
             <p>{engagement.description}</p>
             <p>{engagement.workingPreference}</p>

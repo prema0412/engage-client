@@ -7,18 +7,18 @@ const NavBar = () => {
     return (
         <>
 
-            <ul className="navbar">
+            <ul className="menu">
                
-                  <Link className= "navbar__link navbar__link--one" to="/about">About Engage</Link>
+                  <Link className= "menu__link menu__link--one" to="/about">About Engage</Link>
                
                
-                  <Link className= "navbar__link" to="/engagements">Explore Engagements</Link>
+                  <Link className= "menu__link" to="/engagements">Explore Engagements</Link>
                 
               
-                 <Link className= "navbar__link" to="/post">Post Engagements</Link>
+                 <Link className= "menu__link" to="/post">Post Engagements</Link>
                
               
-                 <Link className= "navbar__link" to="/RememberMe">Help us remember you</Link>
+                 <Link className= "menu__link" to="/RememberMe">Help us remember you</Link>
                
                 
             </ul>

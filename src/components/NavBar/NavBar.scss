@@ -1,6 +1,6 @@
 @use '../../assets/sass/variables.scss' as *;
 
-.navbar {
+.menu {
 
     
         display: flex;
@@ -11,13 +11,19 @@
         height: auto;
       //  margin-top: 100px;
         background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
-        color: $color-text;
+       // color: $color-text;
         font-size: $font-mid;
         line-height: $line-height-reg;
         font-weight: $font-weight-bold;
         font-family: $font-poppins;
         text-decoration: none;
-        border: 10px solid $font-color-grey;
+       // border: 10px solid $font-color-grey;
+        margin-top: 100px;
+        border-width: 3px 3px 5px 5px;
+        border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+        //transform: rotate(-2deg);
+        border: 3px solid $font-color-grey;
+        margin-left: 30px;;
 
         &__link {
 
@@ -28,7 +34,7 @@
          
                 
              //   padding: 50px;
-           margin: 50px 0;   
+            margin: 50px 0;   
            
            &--one {
                    margin-top: 100px;

@@ -1,12 +1,16 @@
 @use "../src/assets/sass/variables.scss" as *;
 
 body{
-  background: $color-background;
+ // background: url('./assets/images/052_nature/blue-sky-with-birds.eps');
+ background-image: url('./assets/images/realistic-blue-sky-background_1048-6707.jpg');
+ background-size: cover;
 }
 
 .main{
   display: grid;
   grid-template-columns: 400px 1fr;
+  grid-gap: 80px;
+  //margin-top: 100px;
   
 }
 

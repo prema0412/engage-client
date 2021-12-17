@@ -26,7 +26,7 @@ const PrepareEngagementList = (props) => {
         const columns = headers.map( (eachCategory, index) => (
 
             <section>
-                <h3 className="engagemenr__category">{eachCategory}</h3>
+                {/* <h3 className="engagemenr__category">{eachCategory}</h3> */}
                 { (eachCategory) && engagements[index].map ( (engagement, index1) => {
 
                     return (
