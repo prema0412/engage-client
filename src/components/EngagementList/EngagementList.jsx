@@ -1,11 +1,17 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import Engagement from '../Engagement/Engagement';
+import EngagementDetail from '../EngagementDetail/EngagementDetail';
 
-const PrepareEngagementList = (props) => {
+const EngagementList = (props) => {
     const { engagamentList, header} = props;
 
-    console.log(engagamentList);
+    const [ showEngagementDetail, setShowEngagementDetail ] = useState(false);
+
+    const [engagementToView, setEngagementToView] = useState({});
+    console.log("in engagement list");
+
+  //  console.log(engagamentList);
 
     const categoryArray = ["professional", "creative", "sports", "technical", "educational", "domestic", "research"];
     const categoryHeaders = ["Professional", "Creative", "Sports", "Technical", "Educational", "Domestic", "Research"];
@@ -17,7 +23,7 @@ const PrepareEngagementList = (props) => {
         
     };
 
-    console.log(filteredCategoryEngagements);
+  //  console.log(filteredCategoryEngagements);
 
     const renderEngagements = (engagements, headers) => {
 
@@ -27,11 +33,16 @@ const PrepareEngagementList = (props) => {
 
             <section>
                 {/* <h3 className="engagemenr__category">{eachCategory}</h3> */}
+
+                {showEngagementDetail && <EngagementDetail engagementToView={engagementToView} showEngagementDetail={showEngagementDetail} setShowEngagementDetail={setShowEngagementDetail}/>}
                 { (eachCategory) && engagements[index].map ( (engagement, index1) => {
 
                     return (
 
-                        <Engagement className="engagement" key={engagement.id+index1} index={index1} engagement={engagement} header={header} />
+                        <Engagement className="engagement" key={engagement.id+engagement.preferredId} index={index1} engagement={engagement} header={header} 
+                        showEngagementDetail={showEngagementDetail} setShowEngagementDetail={setShowEngagementDetail}
+                        
+                        engagementToView={engagementToView} setEngagementToView={setEngagementToView}  />
                     )
 
                      } ) }
@@ -45,12 +56,15 @@ const PrepareEngagementList = (props) => {
 
 
     return (
+
+     <>
      <section className="engagement__detail">  
 
          {renderEngagements(filteredCategoryEngagements,categoryHeaders)}
 
-     </section>  
+     </section> 
+     </> 
     )
 }
 
-export default PrepareEngagementList;
+export default EngagementList;

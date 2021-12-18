@@ -3,23 +3,24 @@ import React from 'react'
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Dashboard from './containers/Dashboard/Dashboard';
-import { GoogleLogin } from 'react-google-login';
+import logo from './assets/images/logo.png'
 
 const App = () => {
 
-  const responseGoogle = response => {
-    console.log(response);
-  };
+ 
 
   return (
     <>
 
-    <GoogleLogin
+    {/* <GoogleLogin
     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
     buttonText="Log in with Google"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'} />
+    cookiePolicy={'single_host_origin'} /> */}
+
+    <img className="logo" src={logo} alt={"logo"} />
+    <header className='header'>Engage</header>
 
     <Router>
 

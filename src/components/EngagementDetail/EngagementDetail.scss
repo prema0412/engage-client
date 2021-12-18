@@ -1,0 +1,63 @@
+@use '../../assets/sass/variables.scss' as *;
+
+
+.engagementViewModel{
+    
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    background-color: papayawhip;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: 'rgba(145, 150, 172, 0.18)';
+   // background-image: url('../../assets/images/brids.jfif');
+   background-image: url('../../assets/images/view-bg.jpg');
+    background-size: cover;
+  }
+
+  .engagementView{
+
+
+    display: block;
+    width: 600px;
+    height: 550px;
+    position: absolute;
+    top: calc(10%);
+    left: calc(30%);
+    justify-content: center;
+  // border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg);
+   // border: 3px solid sienna;
+   border: 10px solid royalblue;
+    
+
+    &__items {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 30px;
+        margin-top: 60px;
+    }
+
+    &__cross {
+        position: absolute;
+        margin-left: 520px;
+        margin-top: 30px;
+    }
+
+    &__top {
+        position: absolute;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+
+
+  }

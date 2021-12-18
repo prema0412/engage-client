@@ -1,6 +1,6 @@
 @use '../../assets/sass/variables.scss' as *;
 
-.engagament-form{
+.eng-form{
 
     display: block;
    // flex-direction: column;
@@ -9,20 +9,26 @@
     margin-left: 100px;
 
     width: 700px;
-    height: 650px;
+    height: 930px;
 
-    border-width: 4px 4px 6px 6px;
+    border-width: 5px 5px 7px 7px;
         border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
         //transform: rotate(-2deg);
         border: 10px solid $font-color-grey; 
         align-items: center;
 
-        &__title{
-            margin-left: 200px;
-        }
+       
 
 
     @media (max-width: 768px) {
+
+
+        &__title{
+            margin-left: 200px;
+            margin-top: 20px;
+            margin-bottom: 30px
+            ;
+        }
 
 
         &__elements{
@@ -40,9 +46,14 @@
         
     }
 
-    @media (min-width: 769px) {
+    @media (min-width: 500px) {
 
-    
+        &__title{
+            margin-left: 200px;
+            margin-top: 20px;
+            margin-bottom: 30px
+            ;
+        }
     
    
     &__elements{
@@ -63,7 +74,20 @@
 
     &__input {
         border-radius: 5px;
-    }     
+        margin-left: 50px;
+    }   
+    
+    &__submit {
+        margin-top: 30px;
+        margin-left: 200px;
+        width: 250px;
+        height: 60px;
+        border-radius: 10%;
+    }
+
+    &__label {
+        margin-left: 50px;
+    }
     
    
 }

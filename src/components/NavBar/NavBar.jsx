@@ -2,8 +2,15 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import './NavBar.scss'
+import { GoogleLogin } from 'react-google-login';
+
 
 const NavBar = () => {
+
+    const responseGoogle = response => {
+        console.log(response);
+      };
+
     return (
         <>
 
@@ -19,9 +26,18 @@ const NavBar = () => {
                
               
                  <Link className= "menu__link" to="/RememberMe">Help us remember you</Link>
+
+                 <GoogleLogin
+             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+             buttonText="Log in with Google"
+             onSuccess={responseGoogle}
+             onFailure={responseGoogle}
+             cookiePolicy={'single_host_origin'} />
                
                 
             </ul>
+
+           
            
             
         </>

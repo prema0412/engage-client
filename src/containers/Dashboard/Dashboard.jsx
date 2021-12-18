@@ -2,7 +2,7 @@ import React from 'react'
 import {  Routes, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
-import PrepareEngagementList from '../../components/PrepareEngagementList/PrepareEngagementList';
+import EngagementList from '../../components/EngagementList/EngagementList';
 import NewEngagement from '../../components/NewEngagement/NewEngagement';
 
 const Dashboard = () => {
@@ -167,6 +167,11 @@ const Dashboard = () => {
     // const getEngagements = () => {
 
     //     fetch("http://localhost:8080/engagements")
+    //         // .then(res => {
+    //         //        var a = res.headers.get("strict-transport-security"),
+    //         //         b = res.headers.get("content-security-policy")
+    //         //         console.log(a,b);
+    //         //     })
     //         .then(res => res.json)
     //         .then(json => setEngagements(json) )
     //         .catch(err => console.log(err))
@@ -185,7 +190,7 @@ const Dashboard = () => {
 
             <Routes>
 
-                <Route path='/engagements' element={<PrepareEngagementList className="engagement" engagamentList={list} header={"Explore Engagements"}/>} />
+                <Route path='/engagements' element={<EngagementList className="engagement" engagamentList={list} header={"Explore Engagements"}/>} />
                 <Route path='/post' element={<NewEngagement className="newEngagement"  header={"Post an Engagement"}/>} />
 
                 {/* <Route path='/' element={<PrepareEngagementList engagamentList={engagements} header={"Explore Engagements"} />} /> */}
