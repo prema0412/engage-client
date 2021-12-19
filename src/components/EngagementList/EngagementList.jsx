@@ -11,7 +11,7 @@ const EngagementList = (props) => {
     const [engagementToView, setEngagementToView] = useState({});
     console.log("in engagement list");
 
-  //  console.log(engagamentList);
+   console.log(engagamentList);
 
     const categoryArray = ["professional", "creative", "sports", "technical", "educational", "domestic", "research"];
     const categoryHeaders = ["Professional", "Creative", "Sports", "Technical", "Educational", "Domestic", "Research"];
