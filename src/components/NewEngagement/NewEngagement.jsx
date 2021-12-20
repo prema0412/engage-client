@@ -13,7 +13,10 @@ const NewEngagement = (props) => {
     const onSubmit = (data, e) => {
 
 
+
         console.log(data);
+        console.log(JSON.stringify(data));
+
         fetch("http://localhost:8080/engagement",{
             method : "POST",
             headers: {
@@ -27,15 +30,20 @@ const NewEngagement = (props) => {
                     engagementType: data.engagementType,
                     title: data.title,
                     description: data.description,
+                    workingPreference: data.workingPreference,
                     contactName: data.contactName,
                     contactEmail: data.contactEmail,
-                    remunerationPreference: data.remunerationPreference
+                    location: data.location,
+                    remunerationPreference: data.remunerationPreference,
+                    status: "OPEN",
+                    createdBy: data.contactEmail
                 })
              })
              .then(response => response.text())
-             .then( text => console.log(text))
+           //  .then( text => console.log(text))
              .then( error => console.log(error))
             
+
         
         e.target.reset();
 
@@ -72,8 +80,9 @@ const NewEngagement = (props) => {
                 <select className="eng-form__input" {...register("engagementType")}>
                     <option value="FULLTIME">Full Time</option>
                      <option value="PARTTIME">Part Time</option>
-                     <option value="INDIVIDUAL">Week Ends</option>
+                     <option value="ONEOF">One Of</option>
                      <option value="WEEKDAYS">Week Days</option>
+                     <option value="WEEKENDS">Week Ends</option>
                      <option value="PROJECT">Project Based</option>
                      <option value="EVENT">Event Based</option>
                 </select>
@@ -84,8 +93,9 @@ const NewEngagement = (props) => {
                     <option value="REMOTE">Remote</option>
                     <option value="ONSITE">Onsite</option>
                     <option value="OFFICE">Office</option>
+                    <option value="DELIVERY">Delivery</option>
                 </select>
-                <input className="eng-form__input" placeholder="Enter work location if Remote is not the opton"></input>
+                <input className="eng-form__input" placeholder="Enter work location if Remote is not the opton" {...register("location", {maxLength:50})}></input>
                 <label className="eng-form__label">Remuneration Option</label>
                 <select className="eng-form__input" {...register("remunerationPreference")}>
                     <option value="PAID">Paid Engagemnt</option>
