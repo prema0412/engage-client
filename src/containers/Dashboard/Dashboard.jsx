@@ -5,6 +5,7 @@ import Autosuggest from 'react-autosuggest';
 import NavBar from '../../components/NavBar/NavBar';
 import EngagementList from '../../components/EngagementList/EngagementList';
 import NewEngagement from '../../components/NewEngagement/NewEngagement';
+import About from '../../components/About/About';
 import './Dashboard.scss';
 
 const Dashboard = () => {
@@ -118,7 +119,10 @@ const Dashboard = () => {
 
                 <Routes>
 
+                    <Route path='/about' element={<About />} />
+
                     <Route path='/engagements' element={<EngagementList className="engagement" engagamentList={listToRender} header={"Explore Engagements"} getEngagements={getEngagements} />} />
+
                     <Route path='/post' element={<NewEngagement className="newEngagement" header={"Post an Engagement"} />} />
 
                     {/* <Route path='/' element={<PrepareEngagementList engagamentList={engagements} header={"Explore Engagements"} />} /> */}
