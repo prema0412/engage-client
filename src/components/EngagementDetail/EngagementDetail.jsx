@@ -12,7 +12,7 @@ const EngagementDetail = (props) => {
     console.log("in engagement detail");
 
     console.log(engagementToView);
-   
+
     const postingDate = dayjs(engagementToView.createdOn).format("DD/MM/YY");
     var relativeTime = require('dayjs/plugin/relativeTime');
     dayjs.extend(relativeTime);
@@ -34,30 +34,31 @@ const EngagementDetail = (props) => {
             className="engagemenViewtModel"
             appElement={document.getElementById('root')}
             overlayClassName="Overlay"
-    //        style={{
-    //        overlay: {
-    //       backgroundColor: 'rgba(145, 150, 172, 0.18)'
-    //     }
-    //   }}
-     >
+        //        style={{
+        //        overlay: {
+        //       backgroundColor: 'rgba(145, 150, 172, 0.18)'
+        //     }
+        //   }}
+        >
 
-        <div className='engagementView'>
-          <img className="engagementView__cross" src={cross} alt="close" onClick={() => {setShowEngagementDetail(false)}} />
-          <p className="engagementView__top">Posted {postedTimeToNow}</p>
-          <div className="engagementView__items">
-              <p>{engagementToView.category}</p>
-              <p>Posted By: {engagementToView.providerType}</p>
-              <p>{engagementToView.title}</p>
-              <p>{engagementToView.description}</p>
-              <p>{engagementToView.engagementType}</p>
-              <p> Location {engagementToView.workingPreference} {engagementToView.location}</p>
-              <p>More Info: {engagementToView.informationUrls}</p>
-              <p>Paid/Probono {engagementToView.remunerationPreference}</p>
-              <p>Recommendation: {engagementToView.recommendation}</p>
-              <p>Team Size: {engagementToView.teamSize}</p>
-             <p>Connect On - {engagementToView.contactEmail}</p>
-          </div>
-        </div>
+            <div className='engagementView'>
+                <img className="engagementView__cross" src={cross} alt="close" onClick={() => { setShowEngagementDetail(false) }} />
+                <h3 className='engagementView__title'>Engagament Detail</h3>
+                <p className="engagementView__top">Posted {postedTimeToNow}</p>
+                <div className="engagementView__items">
+                    <p>{engagementToView.category}</p>
+                    <p>Posted By: {engagementToView.providerType}</p>
+                    <p>{engagementToView.title}</p>
+                    <p>{engagementToView.description}</p>
+                    <p>{engagementToView.engagementType}</p>
+                    <p> Location {engagementToView.workingPreference} {engagementToView.location}</p>
+                    <p>More Info: {engagementToView.informationUrls}</p>
+                    <p>Paid/Probono {engagementToView.remunerationPreference}</p>
+                    <p>Recommendation: {engagementToView.recommendation}</p>
+                    <p>Team Size: {engagementToView.teamSize}</p>
+                    <p>Connect On - {engagementToView.contactEmail}</p>
+                </div>
+            </div>
         </ReactModal>
     )
 }
