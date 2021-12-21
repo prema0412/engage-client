@@ -19,6 +19,8 @@ const Dashboard = () => {
 
     const getEngagements = () => {
 
+        console.log("in fetch");
+
         fetch("http://localhost:8080/engagements")
             .then(res => res.json())
             .then(json => setEngagements(json))
@@ -116,7 +118,7 @@ const Dashboard = () => {
 
                 <Routes>
 
-                    <Route path='/engagements' element={<EngagementList className="engagement" engagamentList={listToRender} header={"Explore Engagements"} />} />
+                    <Route path='/engagements' element={<EngagementList className="engagement" engagamentList={listToRender} header={"Explore Engagements"} getEngagements={getEngagements} />} />
                     <Route path='/post' element={<NewEngagement className="newEngagement" header={"Post an Engagement"} />} />
 
                     {/* <Route path='/' element={<PrepareEngagementList engagamentList={engagements} header={"Explore Engagements"} />} /> */}
