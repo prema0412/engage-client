@@ -1,0 +1,16 @@
+@use '../../assets/sass/variables.scss' as *;
+
+
+.about{
+  margin-top: 110px;
+  line-height: 2.5;
+  font-size: $font-midlarge;
+  font-weight: 500;
+  font-family: $font-poppins;
+  color: $color-main;
+  background-color: white;
+  border: 2px solid $color-main;
+  border-radius: 1%;
+  padding: 20px;
+  margin-right: 20px;
+}

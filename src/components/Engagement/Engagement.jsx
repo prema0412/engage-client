@@ -13,26 +13,27 @@ library.add(faAngleRight);
 
 const Engagement = (props) => {
 
- const { key, index, engagement, header, showEngagementDetail, setShowEngagementDetail, setEngagementToView} = props;
- console.log("in engagement");
+    const { key, index, engagement, header, showEngagementDetail, setShowEngagementDetail, setEngagementToView } = props;
+    console.log("in engagement");
 
- console.log(engagement);
+    console.log(engagement);
 
 
- 
 
- const handleEngagementview = () => {
 
-    setShowEngagementDetail(true);
-    setEngagementToView(engagement);
-   
- }
+    const handleEngagementview = () => {
 
- const formateCreationdDate = dayjs(engagement.createdOn).format("DD/MM/YY");
- //const formateUpdationDate = dayjs(engagement.updatedOn).format("DD/MM/YY");
- 
+        setShowEngagementDetail(true);
+        setEngagementToView(engagement);
+
+    }
+
+    const formateCreationdDate = dayjs(engagement.createdOn).format("DD/MM/YY");
+    //const formateUpdationDate = dayjs(engagement.updatedOn).format("DD/MM/YY");
+
 
     return (
+
         <div className="engagement" >
             <h3>{engagement.category}</h3>
             <p>{engagement.title}</p>
@@ -40,11 +41,15 @@ const Engagement = (props) => {
             <p>{engagement.workingPreference}</p>
             <p>{formateCreationdDate}</p>
 
-            <div>
-                 <FontAwesomeIcon icon={faAngleRight} onClick={handleEngagementview}/>
-                
+
+
+            <div className='arrow'>
+                <FontAwesomeIcon icon={faAngleRight} onClick={handleEngagementview} />
+
             </div>
+
         </div>
+
     )
 }
 

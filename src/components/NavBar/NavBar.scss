@@ -14,7 +14,7 @@
        // color: $color-text;
         font-size: $font-mid;
         line-height: $line-height-reg;
-        font-weight: $font-weight-bold;
+        font-weight: 600;
         font-family: $font-poppins;
        
         text-decoration: none;
@@ -25,13 +25,15 @@
       //  border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
         //transform: rotate(-2deg);
         border: 3px solid royalblue;
-        margin-left: 30px;;
+        margin-left: 50px;
+        background-color: white;
 
         &__link {
 
             
                 text-decoration: none;
-                 color: #212529;
+                /// color: $color-main;
+                color: $color-main;
             
 
          
