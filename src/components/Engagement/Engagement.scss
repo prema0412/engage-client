@@ -36,7 +36,7 @@
     // border-radius: 5%;
 
     width:550px;
-    height: 400px;
+    height: 450px;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(-2deg);
@@ -60,5 +60,22 @@
     //  min-height: 3em;
     //  width: 40%;
    // resize: both;
+
+
+   &__description {
+  
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+       @supports (-webkit-line-clamp: 3) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: initial;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
+   }
    
 }
