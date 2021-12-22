@@ -119,6 +119,8 @@ const Dashboard = () => {
 
                 <Routes>
 
+                    <Route path='/' element={<About />} />
+
                     <Route path='/about' element={<About />} />
 
                     <Route path='/engagements' element={<EngagementList className="engagement" engagamentList={listToRender} header={"Explore Engagements"} getEngagements={getEngagements} />} />
