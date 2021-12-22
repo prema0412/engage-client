@@ -19,7 +19,7 @@
     bottom: 0;
     background-color: 'rgba(145, 150, 172, 0.18)';
    // background-image: url('../../assets/images/brids.jfif');
-   background-image: url('../../assets/images/view-bg.jpg');
+   background-image: url('../../assets/images/realistic-blue-sky-background_1048-6707.jpg');
     background-size: cover;
   }
 
@@ -27,20 +27,27 @@
 
 
     display: block;
-    width: 600px;
-    height: 570px;
+    width: 700px;
+    height: 700px;
     position: absolute;
     top: calc(10%);
     left: calc(30%);
+    padding: 5px;
     justify-content: center;
   // border-width: 3px 3px 5px 5px;
-    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-    transform: rotate(-2deg);
-   // border: 3px solid sienna;
-   border: 10px solid royalblue;
+   // border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+   border-radius: 1%;
+   // transform: rotate(-2deg);
+   // border: 5px solid sienna;
+  // border: 10px solid royalblue;
+   background-color: #ffff;
+   color: $color-main;
+   font-size: $font-midlarge;
     
    &__title {
-     margin-left: 100px;
+     margin-left: 150px;
+     margin-bottom: 20px;
+     padding: 5px;
    }
 
     &__items {
@@ -48,11 +55,13 @@
         grid-template-columns: 1fr;
         margin-left: 30px;
         margin-top: 60px;
+        padding: 5px;
+        line-height: 2;
     }
 
     &__cross {
         position: absolute;
-        margin-left: 520px;
+        margin-left: 620px;
         margin-top: 30px;
     }
 

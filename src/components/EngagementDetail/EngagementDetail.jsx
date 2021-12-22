@@ -46,14 +46,14 @@ const EngagementDetail = (props) => {
                 <h3 className='engagementView__title'>Engagament Detail</h3>
                 <p className="engagementView__top">Posted {postedTimeToNow}</p>
                 <div className="engagementView__items">
-                    <p>{engagementToView.category}</p>
+                    <h3>{engagementToView.category}</h3>
                     <p>Posted By: {engagementToView.providerType}</p>
-                    <p>{engagementToView.title}</p>
+                    <h3>{engagementToView.title}</h3>
                     <p>{engagementToView.description}</p>
                     <p>{engagementToView.engagementType}</p>
-                    <p> Location {engagementToView.workingPreference} {engagementToView.location}</p>
+                    <p> Location: {engagementToView.workingPreference} :{engagementToView.location}</p>
                     <p>More Info: {engagementToView.informationUrls}</p>
-                    <p>Paid/Probono {engagementToView.remunerationPreference}</p>
+                    <h3>Paid/Probono: {engagementToView.remunerationPreference}</h3>
                     <p>Recommendation: {engagementToView.recommendation}</p>
                     <p>Team Size: {engagementToView.teamSize}</p>
                     <p>Connect On - {engagementToView.contactEmail}</p>
