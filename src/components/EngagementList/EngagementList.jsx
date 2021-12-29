@@ -47,10 +47,12 @@ const EngagementList = (props) => {
 
     const handleSearchTerm = (filteredList, value) => {
 
+        console.log("seraching for :" + value);
+
         filteredList = engagementList.filter(item => {
             const categoryTitleLower = item.category.toLowerCase();
 
-            return categoryTitleLower.includes(value);
+            return categoryTitleLower.includes(value.trim().toLowerCase());
         })
 
         return filteredList;
@@ -95,7 +97,7 @@ const EngagementList = (props) => {
                                 return
                             }
                             setSuggestions(engagementList.filter(engagement => (
-                                (engagement.category.toLowerCase()).includes(value)
+                                (engagement.category.toLowerCase()).includes(value.trim().toLowerCase())
                             )));
                         }}
                         onSuggestionsClearRequested={() => {
