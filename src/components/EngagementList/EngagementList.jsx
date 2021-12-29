@@ -78,8 +78,8 @@ const EngagementList = (props) => {
 
         <>
 
-            <section>
-                <div>
+            <section className='engagement__main'>
+                <div className='autoSuggest'>
                     <Autosuggest
                         inputProps={{
                             value: value,
@@ -110,22 +110,23 @@ const EngagementList = (props) => {
                         renderSuggestion={renderSuggestion}
                     />
                 </div>
-            </section>
-            <section className="engagement__detail">
 
-                {showEngagementDetail && <EngagementDetail engagementToView={engagementToView} showEngagementDetail={showEngagementDetail} setShowEngagementDetail={setShowEngagementDetail} />}
-                {listToRender.map((engagement, index) => {
+                <div className="engagement__detail">
 
-                    return (
+                    {showEngagementDetail && <EngagementDetail engagementToView={engagementToView} showEngagementDetail={showEngagementDetail} setShowEngagementDetail={setShowEngagementDetail} />}
+                    {listToRender.map((engagement, index) => {
 
-                        <Engagement className="engagement" key={engagement.id + engagement.preferredId} index={index} engagement={engagement} header={header}
-                            showEngagementDetail={showEngagementDetail} setShowEngagementDetail={setShowEngagementDetail}
+                        return (
 
-                            engagementToView={engagementToView} setEngagementToView={setEngagementToView} />
-                    )
+                            <Engagement className="engagement" key={engagement.id + engagement.preferredId} index={index} engagement={engagement} header={header}
+                                showEngagementDetail={showEngagementDetail} setShowEngagementDetail={setShowEngagementDetail}
 
-                })}
+                                engagementToView={engagementToView} setEngagementToView={setEngagementToView} />
+                        )
 
+                    })}
+
+                </div>
             </section>
         </>
     )
