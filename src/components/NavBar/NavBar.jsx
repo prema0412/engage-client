@@ -7,9 +7,11 @@ import { GoogleLogin } from 'react-google-login';
 
 const NavBar = () => {
 
-    const responseGoogle = response => {
-        console.log(response);
-    };
+    // const responseGoogle = response => {
+    //     console.log(response);
+    // };
+
+
 
 
     return (
@@ -17,7 +19,7 @@ const NavBar = () => {
 
             <ul className="menu">
 
-                <Link className="menu__link menu__link--one" to="/about">About Engage</Link>
+                <Link className="menu__link menu__link--one" to="/">About Engage</Link>
 
 
                 <Link className="menu__link" to="/engagements">Explore Engagements</Link>
@@ -28,12 +30,12 @@ const NavBar = () => {
 
                 <Link className="menu__link" to="/RememberMe">Help us remember you</Link>
 
-                <GoogleLogin className='googleLogin'
+                {/* <GoogleLogin className='googleLogin'
                     clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                     buttonText="Log in with Google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}
-                    cookiePolicy={'single_host_origin'} />
+                    cookiePolicy={'single_host_origin'} /> */}
             </ul>
 
 

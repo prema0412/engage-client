@@ -31,6 +31,7 @@ const NewEngagement = (props) => {
                     title: data.title,
                     description: data.description,
                     workingPreference: data.workingPreference,
+                    teamSize: data.teamSize,
                     contactName: data.contactName,
                     contactEmail: data.contactEmail,
                     location: data.location,
@@ -101,6 +102,8 @@ const NewEngagement = (props) => {
                     <option value="PAID">Paid Engagemnt</option>
                     <option value="PROBONO">Probono</option>
                 </select>
+                <input className="eng-form__input" placeholder="Enter expected Team Size" {...register
+                    ("teamSize", { min: 1, max: 100 })} />
                 <input className="eng-form__input" placeholder="Enter Contact Name" {...register("contactName", { required: true, maxLength: 50 })} />
                 <input className="eng-form__input" placeholder="Enter Contact Email" {...register("contactEmail", { required: true, maxLength: 50 })} />
             </div>
