@@ -17,11 +17,24 @@ const EngagementList = (props) => {
 
     const [suggestions, setSuggestions] = useState([]);
 
+    const [categories, setCategories] = useState([]);
+
 
     useEffect(() => {
         getEngagements();
 
     }, []);
+
+    const getCategories = () => {
+        fetch("http://localhost:8080/categories")
+            .then(res => res.json())
+            .then(json => setCategories(json))
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getCategories();
+    }, [])
 
     let listToRender = engagementList;
     console.log(listToRender);
@@ -30,7 +43,7 @@ const EngagementList = (props) => {
 
 
     const getSuggestionValue = suggestion => {
-        return suggestion.category
+        return suggestion
 
     };
 
@@ -39,7 +52,7 @@ const EngagementList = (props) => {
     const renderSuggestion = (suggestion, { query }) => {
         return (
             <span>
-                {suggestion.category}
+                {suggestion}
             </span>
         )
 
@@ -91,20 +104,20 @@ const EngagementList = (props) => {
                             }
                         }}
                         suggestions={suggestions}
-                        onSuggestionsFetchRequested={({ value }) => {
+                        onSuggestionsFetchRequested={async ({ value }) => {
                             if (!value) {
                                 setSuggestions([]);
                                 return
                             }
-                            setSuggestions(engagementList.filter(engagement => (
-                                (engagement.category.toLowerCase()).includes(value.trim().toLowerCase())
+                            setSuggestions(categories.filter(category => (
+                                (category.toLowerCase()).includes(value.trim().toLowerCase())
                             )));
                         }}
                         onSuggestionsClearRequested={() => {
                             setSuggestions({ suggestions: [] });
                         }}
                         onSuggetionSelected={(event, { suggestion, method }) => {
-                            setSearchTerm(suggestion.category);
+                            setSearchTerm(suggestion);
                         }}
                         getSuggestionValue={getSuggestionValue}
                         renderSuggestion={renderSuggestion}
