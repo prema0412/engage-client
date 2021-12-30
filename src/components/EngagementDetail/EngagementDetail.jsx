@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
+import { patchApi } from '../../api/apiCall';
 import '../EngagementDetail/EngagementDetail.scss';
 
 
@@ -31,8 +32,9 @@ const EngagementDetail = (props) => {
         console.log("engagement saved for you");
     }
 
-    const reportEngagement = (e) => {
-        console.log("engagement has been reported");
+    const reportEngagement = () => {
+
+        console.log("engagement has been reported" + engagementToView);
     }
 
     return (
@@ -55,7 +57,17 @@ const EngagementDetail = (props) => {
 
             <div className='engagementView'>
                 <FontAwesomeIcon className="fab fa-save save" icon={faSave} style={{ color: '#228B22' }} onClick={saveEngagementforUser} />
-                <FontAwesomeIcon className="fab fa-flag flag" icon={faFlag} style={{ color: '#CD5C5C' }} onClick={reportEngagement} />
+                <FontAwesomeIcon className="fab fa-flag flag" icon={faFlag} style={{ color: '#CD5C5C' }}
+                    onClick={() => {
+                        (
+                            fetch(`http://localhost:8080/engagement/${engagementToView.id}`,
+                                {
+                                    method: 'PATCH'
+                                })
+                                .then(res => res.text())
+                                .then(text => console.log(text))
+                                .catch(e => console.log(e)))
+                    }} />
                 <img className="engagementView__cross" src={cross} alt="close" onClick={() => { setShowEngagementDetail(false) }} />
                 <h3 className='engagementView__title'>Engagament Detail</h3>
                 <p className="engagementView__top">Posted {postedTimeToNow}</p>

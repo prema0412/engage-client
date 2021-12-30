@@ -20,6 +20,8 @@ const EngagementList = (props) => {
     const [categories, setCategories] = useState([]);
 
 
+
+
     useEffect(() => {
         getEngagements();
 
@@ -104,7 +106,7 @@ const EngagementList = (props) => {
                             }
                         }}
                         suggestions={suggestions}
-                        onSuggestionsFetchRequested={async ({ value }) => {
+                        onSuggestionsFetchRequested={({ value }) => {
                             if (!value) {
                                 setSuggestions([]);
                                 return
