@@ -62,7 +62,7 @@
 
     &__cross {
         position: absolute;
-        margin-left: 620px;
+        margin-left: 610px;
         margin-top: 30px;
     }
 
@@ -73,4 +73,11 @@
     }
 
 
+  }
+
+  .save, .flag{
+    padding: 2px;
+    margin-right: 2px;
+    margin-left: 5px;
+    margin-top: 30px;
   }

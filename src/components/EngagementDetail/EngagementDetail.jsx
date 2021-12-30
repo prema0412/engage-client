@@ -3,6 +3,10 @@ import React from 'react'
 import dayjs from 'dayjs';
 import cross from '../../assets/images/cross-grey.svg';
 import ReactModal from 'react-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
+import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import '../EngagementDetail/EngagementDetail.scss';
 
 
@@ -21,6 +25,14 @@ const EngagementDetail = (props) => {
 
     const handleCloseModel = () => {
         setShowEngagementDetail(false);
+    }
+
+    const saveEngagementforUser = (e) => {
+        console.log("engagement saved for you");
+    }
+
+    const reportEngagement = (e) => {
+        console.log("engagement has been reported");
     }
 
     return (
@@ -42,6 +54,8 @@ const EngagementDetail = (props) => {
         >
 
             <div className='engagementView'>
+                <FontAwesomeIcon className="fab fa-save save" icon={faSave} style={{ color: '#228B22' }} onClick={saveEngagementforUser} />
+                <FontAwesomeIcon className="fab fa-flag flag" icon={faFlag} style={{ color: '#CD5C5C' }} onClick={reportEngagement} />
                 <img className="engagementView__cross" src={cross} alt="close" onClick={() => { setShowEngagementDetail(false) }} />
                 <h3 className='engagementView__title'>Engagament Detail</h3>
                 <p className="engagementView__top">Posted {postedTimeToNow}</p>
