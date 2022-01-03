@@ -30,6 +30,8 @@ const EngagementDetail = (props) => {
 
     const saveEngagementforUser = (e) => {
         console.log("engagement saved for you");
+        window.localStorage.setItem('engagement', JSON.stringify(engagementToView));
+        console.log(JSON.parse(window.localStorage.getItem('engagement')));
     }
 
     const reportEngagement = () => {
