@@ -62,7 +62,7 @@ const EngagementDetail = (props) => {
                 <FontAwesomeIcon className="fab fa-flag flag" icon={faFlag} style={{ color: '#CD5C5C' }}
                     onClick={() => {
                         (
-                            fetch(`http://localhost:8080/engagement/${engagementToView.id}`,
+                            fetch(`http://localhost:8080/engagement/${engagementToView.id}/report`,
                                 {
                                     method: 'PATCH'
                                 })
