@@ -15,6 +15,20 @@ body{
   
 }
 
+.google{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  top: 0.1%;
+  padding: 20px;
+
+  .login{
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 .heading{
   display: grid;
   grid-template-columns: 100px 300px;

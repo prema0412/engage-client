@@ -31,7 +31,7 @@ const Login = () => {
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
-        style={{ marginTop: '50px' }}
+        style={{ marginTop: '5px', padding: '5px' }}
         isSignedIn={true}
       />
     </div>

@@ -1,4 +1,5 @@
 
+import Multiselect from 'multiselect-react-dropdown';
 import React, { useState, useEffect } from 'react'
 import Autosuggest from 'react-autosuggest';
 import Engagement from '../Engagement/Engagement';
@@ -15,9 +16,13 @@ const EngagementList = (props) => {
 
     const [value, setSearchTerm] = useState('');
 
+
     const [suggestions, setSuggestions] = useState([]);
 
+
     const [categories, setCategories] = useState([]);
+
+
 
 
 
@@ -38,27 +43,12 @@ const EngagementList = (props) => {
         getCategories();
     }, [])
 
+
     let listToRender = engagementList;
     console.log(listToRender);
 
     let filteredList = [];
 
-
-    const getSuggestionValue = suggestion => {
-        return suggestion
-
-    };
-
-
-
-    const renderSuggestion = (suggestion, { query }) => {
-        return (
-            <span>
-                {suggestion}
-            </span>
-        )
-
-    };
 
     const handleSearchTerm = (filteredList, value) => {
 
@@ -121,8 +111,14 @@ const EngagementList = (props) => {
                         onSuggetionSelected={(event, { suggestion, method }) => {
                             setSearchTerm(suggestion);
                         }}
-                        getSuggestionValue={getSuggestionValue}
-                        renderSuggestion={renderSuggestion}
+                        getSuggestionValue={(suggestion) => suggestion}
+                        renderSuggestion={(suggestion, { query }) => {
+                            return (
+                                <span>
+                                    {suggestion}
+                                </span>
+                            )
+                        }}
                     />
                 </div>
 

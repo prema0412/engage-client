@@ -19,8 +19,10 @@ const App = () => {
       <div className='heading'>
         <img className="logo" src={logo} alt={"logo"} />
         <header className='header'>Engage</header>
-        <Login />
-        <Logout />
+      </div>
+      <div className='google'>
+        <Login className='login' />
+        <Logout className='logout' />
       </div>
 
       <Router>
