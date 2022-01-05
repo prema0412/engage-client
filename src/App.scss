@@ -15,19 +15,19 @@ body{
   
 }
 
-.google{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  top: 0.1%;
-  padding: 20px;
 
-  .login{
+
+  .googleLogin{
     padding: 10px;
-    margin-bottom: 10px;
+   
   }
-}
+
+  .googleLogOut{
+    padding: 10px;
+   
+    right: 500px;
+  }
+
 
 .heading{
   display: grid;
@@ -43,6 +43,7 @@ body{
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  margin-bottom: 10px;
   // margin-top: 10px;
   // margin-left: 10px;
 }
@@ -56,6 +57,12 @@ body{
   letter-spacing: 5pt;
   color: $color-main;
 }
+
+.login{
+  padding: 10px;
+}
+
+
 
 
 // .App {

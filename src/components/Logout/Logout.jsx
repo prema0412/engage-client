@@ -4,9 +4,17 @@ import { GoogleLogout } from 'react-google-login';
 
 
 
-const Logout = () => {
+const Logout = (props) => {
+
+  const { currentUser, setCurrentUser, currentUserProfile, setCurrentUserProfile } = props;
   const onSuccess = () => {
+    const userProfile = {};
     console.log('Logout made successfully');
+    setCurrentUser("");
+    userProfile.name = "";
+    userProfile.imageUrl = "";
+    setCurrentUserProfile(userProfile);
+
   };
 
   return (

@@ -27,12 +27,14 @@ const App = () => {
         <header className='header'>Engage</header>
       </div>
       {!currentUser &&
-        <Login currentUser={currentUser} setCurrentUser={setCurrentUser}
+        <Login className="login" currentUser={currentUser} setCurrentUser={setCurrentUser}
           currentUserProfile={currentUserProfile} setCurrentUserProfile={setCurrentUserProfile}
         />
       }
 
-      {currentUser && <Profile currentUserProfile={currentUserProfile} />}
+      {currentUser && <Profile currentUser={currentUser} setCurrentUser={setCurrentUser}
+        currentUserProfile={currentUserProfile}
+        setCurrentUserProfile={setCurrentUserProfile} />}
 
       <Router>
 
