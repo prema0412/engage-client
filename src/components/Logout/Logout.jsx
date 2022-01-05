@@ -7,7 +7,6 @@ import { GoogleLogout } from 'react-google-login';
 const Logout = () => {
   const onSuccess = () => {
     console.log('Logout made successfully');
-    alert('Logout made successfully ✌');
   };
 
   return (
@@ -16,7 +15,7 @@ const Logout = () => {
         clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}
         buttonText="Logout"
         onLogoutSuccess={onSuccess}
-        style={{ marginTop: '5px', padding: '5px' }}
+        style={{ Top: '5px', Right: '500px', padding: '5px' }}
       ></GoogleLogout>
     </div>
   );

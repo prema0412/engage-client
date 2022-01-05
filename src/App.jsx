@@ -7,9 +7,15 @@ import Dashboard from './containers/Dashboard/Dashboard';
 //import logo from './assets/images/logo.png'
 import logo from './assets/images/logo-2.png'
 import Login from './components/Login/Login';
+import Profile from './components/Profile/Profile';
 import Logout from './components/Logout/Logout';
 
 const App = () => {
+
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUserProfile, setCurrentUserProfile] = useState({});
+
+  console.log(currentUser);
 
 
 
@@ -20,10 +26,13 @@ const App = () => {
         <img className="logo" src={logo} alt={"logo"} />
         <header className='header'>Engage</header>
       </div>
-      <div className='google'>
-        <Login className='login' />
-        <Logout className='logout' />
-      </div>
+      {!currentUser &&
+        <Login currentUser={currentUser} setCurrentUser={setCurrentUser}
+          currentUserProfile={currentUserProfile} setCurrentUserProfile={setCurrentUserProfile}
+        />
+      }
+
+      {currentUser && <Profile currentUserProfile={currentUserProfile} />}
 
       <Router>
 

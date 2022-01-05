@@ -1,26 +1,28 @@
 import React from 'react';
+import Logout from '../Logout/Logout';
 
 import { GoogleLogin } from 'react-google-login';
 // refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
 
 
-const Login = () => {
+const Login = (props) => {
 
-  console.log(`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`);
+  const { currentUser, setCurrentUser, currentUserProfile, setCurrentUserProfile } = props;
+
+
   const onSuccess = (res) => {
+    const userProfile = {};
     console.log('Login Success: currentUser:', res.profileObj);
-    alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    );
+    setCurrentUser(res.profileObj.email);
+    userProfile.name = res.profileObj.name;
+    userProfile.imageUrl = res.profileObj.imageUrl;
+    setCurrentUserProfile(userProfile);
     refreshTokenSetup(res);
   };
 
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
-    alert(
-      `Failed to login.`
-    );
   };
 
   return (
@@ -34,6 +36,8 @@ const Login = () => {
         style={{ marginTop: '5px', padding: '5px' }}
         isSignedIn={true}
       />
+
+
     </div>
   );
 }
